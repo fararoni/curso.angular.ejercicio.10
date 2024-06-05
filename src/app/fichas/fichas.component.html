@@ -1,0 +1,22 @@
+<section>
+    
+      <input type="text" placeholder="Nombre de la Persona" 
+      [(ngModel)]="searchTerm"
+      (input)="filterFichas()"
+      />
+      <button class="primary" type="button">Buscar</button>
+    
+  </section>
+  <section class="results">
+    <ng-container *ngFor="let fichaPersona of filteredFichas">
+      <ng-container *ngIf="fichaPersona.enlicencia===false" >
+        
+        <app-ficha-persona *ngIf="fichaPersona.enlicencia===false"
+           [fichaPersona]="fichaPersona"
+          [baseUrl] = "baseUrl"
+        >  
+        <hr />2
+        </app-ficha-persona>
+      </ng-container>
+    </ng-container>
+  </section>

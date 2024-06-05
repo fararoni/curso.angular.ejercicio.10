@@ -1,0 +1,16 @@
+ <section class="listing">
+      <img
+        class="listing-photo"
+        src="{{baseUrl + '/' + fichaPersona.url_photo}}"
+        alt="Fotografía {{ fichaPersona.nombre }}"
+        
+      />
+      <h2 [ngClass] ="fichaPersona.enlicencia ? 'listing-enlicencia' : '' "
+          class="listing-heading">{{ fichaPersona.nombre }}
+        <h3 *ngIf="fichaPersona.reelecta===false"> Persona reelecta</h3>
+      </h2>
+      <p class="listing-location">{{ fichaPersona.ciudad }}, distrito: {{ fichaPersona.distrito }} </p>
+      <h3 [ngClass] ="listaClasses" class="listing-status">{{ fichaPersona.reelecta }}</h3>
+      <button (click)="toggleDeAcuerdo()"
+          [ngStyle] ="getStylesDeAcuerdo()">De acuerdo</button>
+</section>
